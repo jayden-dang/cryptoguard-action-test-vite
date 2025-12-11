@@ -32,7 +32,7 @@ jobs:
 
       # CryptoGuard V1.0 GitHub OIDC Deployment
       - name: CryptoGuard Deploy
-        uses: CommandOSSLabs/cryptoguard-action@v0.3.3
+        uses: CommandOSSLabs/cryptoguard-action@v0.3.4
         with:
           domain: klynt.dev
           debug: true
