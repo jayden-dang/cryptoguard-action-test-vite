@@ -3,6 +3,7 @@ name: CryptoGuard V1.0 GitHub OIDC Deploy
 on:
   push:
     branches: [main]
+  workflow_dispatch: # Allow manual trigger for testing
 
 jobs:
   deploy:
@@ -29,16 +30,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      # CryptoGuard V1.0 GitHub OIDC Deployment (with multi-format key support)
+      # CryptoGuard V1.0 GitHub OIDC Deployment
       - name: CryptoGuard Deploy
-        uses: CommandOSSLabs/cryptoguard-action@v0.3.0
+        uses: CommandOSSLabs/cryptoguard-action@v0.3.2
         with:
-          domain: cryptoguard-action-test-vite.vercel.app
+          domain: klynt.dev
           debug: true
           build-dir: ./dist
-          network: testnet # or mainnet for production
+          network: testnet
+          registry-id: "0x252897ea34fc5677d46e9b440735e4a06ade4b9b2bb73159fd9253be1969ee86"
         env:
-          # Domain verification hash from CLI registration
-          CRYPTOGUARD_DOMAIN_HASH: ${{ secrets.CRYPTOGUARD_DOMAIN_HASH }}
-          # Private key for signature authentication
+          # Private key for domain signature (same key used to register domain)
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
