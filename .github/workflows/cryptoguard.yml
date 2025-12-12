@@ -32,13 +32,13 @@ jobs:
 
       # CryptoGuard V1.0 GitHub OIDC Deployment
       - name: CryptoGuard Deploy
-        uses: CommandOSSLabs/cryptoguard-action@v0.3.6
+        uses: CommandOSSLabs/cryptoguard-action@v0.3.7
         with:
           domain: klynt.dev
           debug: true
           build-dir: ./dist
           network: testnet
-          registry-id: "0x94017b50a3eb0fc999894ed362bca704427d50df3754bfda5a07a585d0aae2ee"
+          registry-id: "0x7d7d100cce0cbbd01625b7f250c14cf25080fdcc412c651054ce44fe13f79bea"
           tee-server-url: "https://ad731f553c69.ngrok-free.app/api/v1"
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
