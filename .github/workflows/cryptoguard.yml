@@ -32,13 +32,13 @@ jobs:
 
       # CryptoGuard V1.0 GitHub OIDC Deployment
       - name: CryptoGuard Deploy
-        uses: CommandOSSLabs/cryptoguard-action@v0.3.2
+        uses: CommandOSSLabs/cryptoguard-action@v0.3.5
         with:
           domain: klynt.dev
           debug: true
           build-dir: ./dist
           network: testnet
           registry-id: "0x252897ea34fc5677d46e9b440735e4a06ade4b9b2bb73159fd9253be1969ee86"
+          tee-server-url: "https://ad731f553c69.ngrok-free.app/api/v1"
         env:
-          # Private key for domain signature (same key used to register domain)
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
