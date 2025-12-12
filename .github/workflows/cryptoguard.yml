@@ -38,7 +38,7 @@ jobs:
           debug: true
           build-dir: ./dist
           network: testnet
-          registry-id: "0x252897ea34fc5677d46e9b440735e4a06ade4b9b2bb73159fd9253be1969ee86"
+          registry-id: "0x94017b50a3eb0fc999894ed362bca704427d50df3754bfda5a07a585d0aae2ee"
           tee-server-url: "https://ad731f553c69.ngrok-free.app/api/v1"
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
